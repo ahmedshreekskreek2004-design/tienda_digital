@@ -65,10 +65,10 @@ class OrderBuyController extends Controller
     $token_telegram = env('TELEGRAM_BOT_TOKEN');
     $chatId = env('TELEGRAM_CHAT_ID');
 
-    $message = "✅ Order Completed\n\n"
-             . "Order ID: #" . $order->id . "\n"
-             . "User ID: " . $user->id . "\n"
-             . "Status: " . $order->status;
+        $message = "✅ Order Completed\n\n"
+                . "Order ID: #" . $order->id . "\n"
+                . "User ID: " . $user->id . "\n"
+                . "Status: " . $order->status;
 
     file_get_contents(
         "https://api.telegram.org/bot{$token_telegram}/sendMessage?" . http_build_query([
